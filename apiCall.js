@@ -12,5 +12,5 @@ function apiAttempt() {
 }
 
 apiAttempt().then(function (res) {
-  return res[Math.floor(Math.random * 3 + 1)].word;
+  console.log(res);
 });
