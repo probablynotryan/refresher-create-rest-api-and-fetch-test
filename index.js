@@ -3,11 +3,7 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
-app.use(
-  bodyParser.urlencoded({
-    extended: true,
-  })
-);
+app.use(bodyParser.json());
 
 app.use(express.static("public"));
 
@@ -22,7 +18,12 @@ const someNumbers = [
 
 app.get("/", (req, res) => {
   console.log("hit.");
-  res.send(someNumbers[Math.floor(Math.random() * 3 + 1)]);
+  res.send(someNumbers);
+});
+
+app.post("/", (req, res) => {
+  console.log(`what the server saw: ${req.body.word}`);
+  someNumbers.push(req.body);
 });
 
 app.listen(3000, function () {
