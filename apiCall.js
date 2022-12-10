@@ -18,8 +18,9 @@ async function apiPost() {
     url: "http://localhost:3000",
     method: "POST",
     data: {
-      word: "four",
+      word: "fourFFF",
       number: 4,
+      random: "random",
     },
   });
 }
